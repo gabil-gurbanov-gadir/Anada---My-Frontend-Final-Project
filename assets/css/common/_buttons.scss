@@ -1,0 +1,23 @@
+.btn {
+    border-radius: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.btn-primary {
+    padding: 10px 40px;
+}
+
+.btn-gradient {
+    padding: 15px 40px;
+    background-image: $linear-gradient-tolight;
+    color: #ffffff !important;
+    background-color: #437eeb;
+    transition: all 500ms ease;
+    &:hover {
+        background-image: $linear-gradient-todark;
+    }
+    &:active {
+        background-color: $primary-color;
+    }
+}

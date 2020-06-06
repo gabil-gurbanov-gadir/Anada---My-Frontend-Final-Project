@@ -1,0 +1,170 @@
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: url('../img/preloader.gif') center no-repeat #ffffff;
+    text-align: center;
+}
+
+#nav {
+    nav.navbar {
+        background: #ffffff;
+        box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.04);
+        padding: 0;
+        .header {
+            margin-left: -23px;
+            .navbar-header {
+                a.navbar-brand {
+                    position: relative;
+                    display: inline-block;
+                    z-index: 1;
+                    padding: 20px 30px 20px 0;
+                    &::before {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        content: "";
+                        height: 93px;
+                        width: 500%;
+                        background: $primary-color;
+                        z-index: -1;
+                    }
+                    img {
+                        display: initial;
+                        height: auto;
+                        margin-left: -15px;
+                    }
+                }
+            }
+            .collapse {
+                margin-right: -23px;
+                ul {
+                    &.navbar-nav {
+                        margin-right: -15px;
+                        li {
+                            a {
+                                font-size: 13px;
+                                letter-spacing: 0.06em;
+                                padding: 36px 15px;
+                                text-transform: uppercase;
+                                font-weight: 800;
+                                line-height: 20px;
+                                display: block;
+                                color: #333333;
+                                font-family: $main-font;
+                                &:hover {
+                                    color: $primary-color;
+                                }
+                                &.active {
+                                    color: $primary-color;
+                                }
+                            }
+                            &.dropdown {
+                                a {
+                                    &.nav-link {
+                                        &::after {
+                                            content: "\f107";
+                                            font-family: "Font Awesome 5 Free";
+                                            margin-left: 5px;
+                                            margin-top: 2px;
+                                            border: none;
+                                            font-weight: 900;
+                                            transition: all 0.35s ease-in-out;
+                                        }
+                                    }
+                                }
+                                ul {
+                                    display: block;
+                                    visibility: hidden;
+                                    background: #fff none repeat scroll 0 0;
+                                    border: 1px solid transparent;
+                                    border-radius: 2px;
+                                    box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.15);
+                                    padding: 0;
+                                    width: 250px;
+                                    margin-top: 0;
+                                    top: 75%;
+                                    opacity: 0;
+                                    transition: all 0.65s ease-in-out;
+                                    &.show {
+                                        top: 100%;
+                                        opacity: 1;
+                                    }
+                                    li {
+                                        a {
+                                            color: #333333;
+                                            display: block;
+                                            font-size: 14px;
+                                            margin-bottom: 0;
+                                            padding: 10px 15px;
+                                            text-align: left;
+                                            text-transform: capitalize;
+                                            width: 100%;
+                                            border-bottom: solid 1px #f5f5f5;
+                                            font-family: $main-font;
+                                            font-weight: 600;
+                                            line-height: 30px;
+                                            letter-spacing: 0px;
+                                            transition: all 0.35s ease-in-out;
+                                            &:hover {
+                                                text-decoration: none;
+                                                color: $primary-color;
+                                            }
+                                        }
+                                        &:last-child {
+                                            a {
+                                                border-bottom: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                ul.attr-nav {
+                    margin-left: 15px;
+                    min-height: 90px;
+                    padding-left: 10px;
+                    position: relative;
+                    z-index: 1;
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        background: #e7e7e7 none repeat scroll 0 0;
+                        content: "";
+                        height: 30px;
+                        left: 0;
+                        margin-top: -15px;
+                        top: 50%;
+                        width: 1px;
+                    }
+                    li {
+                        a {
+                            color: #333333;
+                        }
+                        padding: 25px 0;
+                        font-size: 18px;
+                        float: left;
+                        display: block;
+                        &.search {
+                            a {
+                                font-size: 25.5px;
+                                padding: 0px 6.5px !important;
+                            }
+                        }
+                        &.side-bar {
+                            a {
+                                font-size: 16px;
+                                padding: 7px 10px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
