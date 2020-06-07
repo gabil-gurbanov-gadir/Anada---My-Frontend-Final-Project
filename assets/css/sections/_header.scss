@@ -10,6 +10,10 @@
 }
 
 #nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
     nav.navbar {
         background: #ffffff;
         box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.04);
@@ -65,14 +69,18 @@
                             &.dropdown {
                                 a {
                                     &.nav-link {
+                                        --myVar: "\f107";
                                         &::after {
-                                            content: "\f107";
+                                            content: var(--myVar);
                                             font-family: "Font Awesome 5 Free";
                                             margin-left: 5px;
                                             margin-top: 2px;
                                             border: none;
                                             font-weight: 900;
                                             transition: all 0.35s ease-in-out;
+                                        }
+                                        &:hover {
+                                            --myVar: "\f106";
                                         }
                                     }
                                 }
@@ -88,10 +96,11 @@
                                     margin-top: 0;
                                     top: 75%;
                                     opacity: 0;
-                                    transition: all 0.65s ease-in-out;
+                                    transition: all 0.85s ease;
                                     &.show {
                                         top: 100%;
                                         opacity: 1;
+                                        visibility: visible;
                                     }
                                     li {
                                         a {
@@ -142,7 +151,7 @@
                         top: 50%;
                         width: 1px;
                     }
-                    li {
+                    &>li {
                         a {
                             color: #333333;
                         }
@@ -155,9 +164,213 @@
                                 font-size: 25.5px;
                                 padding: 0px 6.5px !important;
                             }
+                            .top-search {
+                                background-color: #ffffff;
+                                border: medium none;
+                                border-radius: 30px;
+                                box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.5);
+                                height: 0px;
+                                position: absolute;
+                                right: 10px;
+                                top: 90px;
+                                z-index: 99;
+                                border: 1px solid #e7e7e7;
+                                overflow: hidden;
+                                visibility: hidden;
+                                transition: all 0.35s ease-in-out;
+                                &.show {
+                                    height: 50px;
+                                    visibility: visible;
+                                    transition: all 0.35s ease-in-out;
+                                }
+                                .input-group {
+                                    position: relative;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: stretch;
+                                    width: 100%;
+                                    form {
+                                        overflow: hidden;
+                                        position: relative;
+                                        .form-control {
+                                            background-color: transparent;
+                                            border: medium none !important;
+                                            box-shadow: inherit;
+                                            color: #1c1c1c;
+                                            min-width: 300px;
+                                            padding: 0 20px;
+                                            display: block;
+                                            width: 100%;
+                                            height: calc(1.5em + .75rem + 2px);
+                                            padding: .375rem .75rem;
+                                            font-size: 1rem;
+                                            font-weight: 400;
+                                            line-height: 1.5;
+                                            color: #495057;
+                                            background-color: #fff;
+                                            background-clip: padding-box;
+                                            border: 1px solid #ced4da;
+                                            border-radius: .25rem;
+                                            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                                            min-height: 50px;
+                                        }
+                                        button {
+                                            background: transparent none repeat scroll 0 0;
+                                            border: medium none;
+                                            box-shadow: inherit;
+                                            color: #666666;
+                                            height: 50px;
+                                            position: absolute;
+                                            right: 0;
+                                            text-align: center;
+                                            top: 0;
+                                            width: 50px;
+                                            z-index: 9;
+                                            i {
+                                                font-size: 22px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                         &.side-bar {
-                            a {
+                            .side {
+                                position: fixed;
+                                overflow-y: auto;
+                                top: 0;
+                                right: -400px;
+                                width: 400px;
+                                padding: 50px;
+                                height: 100%;
+                                display: block;
+                                background-color: #ffffff;
+                                transition: all 0.3s ease-in-out;
+                                z-index: 9;
+                                box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.1);
+                                &.on {
+                                    right: -16px;
+                                }
+                                .close-side {
+                                    border-radius: 50%;
+                                    color: #f44336;
+                                    float: right;
+                                    font-size: 20px;
+                                    font-weight: 400;
+                                    height: 40px;
+                                    line-height: 38px;
+                                    position: relative;
+                                    text-align: center;
+                                    top: -30px;
+                                    width: 40px;
+                                    z-index: 2;
+                                }
+                                .widget {
+                                    position: relative;
+                                    z-index: 1;
+                                    margin-bottom: 50px;
+                                    h4 {
+                                        display: block;
+                                        font-weight: 800;
+                                        margin-bottom: 25px;
+                                        padding-bottom: 15px;
+                                        position: relative;
+                                        text-transform: capitalize;
+                                        z-index: 1;
+                                        border-bottom: 1px dashed #dddddd;
+                                    }
+                                    ul {
+                                        &.contact {
+                                            li {
+                                                margin-bottom: 25px;
+                                            }
+                                        }
+                                        li {
+                                            display: flex;
+                                            margin-bottom: 15px;
+                                            font-size: 15px;
+                                            a {
+                                                font-weight: 700;
+                                                color: $black-color;
+                                                line-height: 30px;
+                                            }
+                                            .icon,
+                                            .info {
+                                                display: table-cell;
+                                                vertical-align: middle;
+                                                color: $gray-text-color;
+                                            }
+                                            .icon {
+                                                padding-right: 15px;
+                                                i {
+                                                    color: $primary-color;
+                                                    font-size: 40px;
+                                                    display: inline-block;
+                                                    text-align: center;
+                                                    border-radius: 50%;
+                                                }
+                                            }
+                                            .info {
+                                                span {
+                                                    display: block;
+                                                    font-weight: 900;
+                                                    line-height: 20px;
+                                                    text-transform: uppercase;
+                                                    font-size: 14px;
+                                                    width: 100%;
+                                                    margin-bottom: 5px;
+                                                    color: #232323;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.social {
+                                        margin-bottom: 0;
+                                        li {
+                                            display: inline-block;
+                                            a {
+                                                color: #ffffff;
+                                                display: inline-block;
+                                                font-weight: 600;
+                                                height: 40px;
+                                                line-height: 42px;
+                                                margin-right: 5px;
+                                                margin-top: 5px;
+                                                padding: 0;
+                                                text-align: center;
+                                                width: 40px;
+                                                border-radius: 5px;
+                                                font-size: 13px;
+                                                transition: all 0.35s ease-in-out;
+                                                &:hover {
+                                                    background: $primary-color none repeat scroll 0 0!important;
+                                                }
+                                            }
+                                            &.facebook {
+                                                a {
+                                                    background: #3b5998 none repeat scroll 0 0;
+                                                }
+                                            }
+                                            &.twitter {
+                                                a {
+                                                    background: #1da1f2 none repeat scroll 0 0;
+                                                }
+                                            }
+                                            &.pinterest {
+                                                a {
+                                                    background: #bd081c none repeat scroll 0 0;
+                                                }
+                                            }
+                                            &.dribbble {
+                                                a {
+                                                    background: #ea4c89 none repeat scroll 0 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &>a {
                                 font-size: 16px;
                                 padding: 7px 10px !important;
                             }
