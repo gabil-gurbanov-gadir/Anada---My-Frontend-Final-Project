@@ -10,14 +10,9 @@ $(document).ready(function() {
             $('#nav').css("position", "absolute");
         }
     });
-    if ($(document).scrollTop() > 0) {
-        console.log("artdi" + $(document).scrollTop());
-    }
     $('ul.navbar-nav li.dropdown').each(function(elem) {
         $(this).on('mouseenter', function(e) {
             $(this).children('ul.dropdown-menu').addClass('show');
-            $(this).children('a.nav-link').css('--myVar', `"\f106"`);
-            console.log($(this).children('a.nav-link'));
         });
         $(this).on('mouseleave', function() {
             $(this).children('ul.dropdown-menu').removeClass('show');
@@ -36,4 +31,34 @@ $(document).ready(function() {
             $('#sideBarBtn').next().toggleClass('on');
         })
         // End Nav-menu
+
+    // Start Main
+
+    $('.feature-carousel').owlCarousel({
+        loop: true,
+        nav: false,
+        margin: 30,
+        dots: true,
+        autoplay: true,
+        items: 1,
+        navText: [
+            "<i class='fa fa-angle-left'></i>",
+            "<i class='fa fa-angle-right'></i>"
+        ],
+        responsive: {
+            1000: {
+                stagePadding: 100,
+            }
+        }
+    });
+    $('.testimonial-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        items: 1,
+        responsive: {
+            1000: {
+                items: 1
+            }
+        }
+    })
 })

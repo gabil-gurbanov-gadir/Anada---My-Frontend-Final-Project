@@ -19,7 +19,7 @@
         box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.04);
         padding: 0;
         .header {
-            margin-left: -23px;
+            margin-left: -15px;
             .navbar-header {
                 a.navbar-brand {
                     position: relative;
@@ -226,8 +226,11 @@
                                             top: 0;
                                             width: 50px;
                                             z-index: 9;
+                                            &:focus {
+                                                outline: none;
+                                            }
                                             i {
-                                                font-size: 22px;
+                                                font-size: 15px;
                                             }
                                         }
                                     }
@@ -311,6 +314,7 @@
                                                 }
                                             }
                                             .info {
+                                                padding-top: 10px;
                                                 span {
                                                     display: block;
                                                     font-weight: 900;
@@ -340,8 +344,10 @@
                                                 text-align: center;
                                                 width: 40px;
                                                 border-radius: 5px;
-                                                font-size: 13px;
                                                 transition: all 0.35s ease-in-out;
+                                                i {
+                                                    font-size: 13px;
+                                                }
                                                 &:hover {
                                                     background: $primary-color none repeat scroll 0 0!important;
                                                 }

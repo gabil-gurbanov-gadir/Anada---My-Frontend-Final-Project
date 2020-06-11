@@ -4,9 +4,32 @@
 }
 
 body {
+    height: 2000px;
     font-family: $main-font;
+    font-size: 15px;
 }
 
 a {
     text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.def-pad {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+i {
+    font-size: 18px;
+}
+
+img {
+    border: none;
+    outline: none;
 }
