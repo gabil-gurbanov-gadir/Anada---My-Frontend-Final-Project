@@ -4,13 +4,13 @@
 }
 
 body {
-    height: 2000px;
     font-family: $main-font;
     font-size: 15px;
 }
 
 a {
     text-decoration: none;
+    transition: all 0.35s ease-in-out;
     &:hover {
         text-decoration: none;
         outline: none;
@@ -32,4 +32,9 @@ i {
 img {
     border: none;
     outline: none;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
 }
